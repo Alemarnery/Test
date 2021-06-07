@@ -10,19 +10,6 @@ const Footer = () => {
               Copyright &copy; Your Website 2021
             </div>
           </div>
-          <div className="col-auto">
-            <a className="link-light small" href="#!">
-              Privacy
-            </a>
-            <span className="text-white mx-1">&middot;</span>
-            <a className="link-light small" href="#!">
-              Terms
-            </a>
-            <span className="text-white mx-1">&middot;</span>
-            <a className="link-light small" href="#!">
-              Contact
-            </a>
-          </div>
         </div>
       </div>
     </footer>
