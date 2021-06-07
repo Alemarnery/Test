@@ -15,7 +15,7 @@ const Header = () => {
           <div class="col-lg-8 col-xl-7 col-xxl-6">
             <div class="my-5 text-center text-xl-start">
               <h1 class="display-5 fw-bolder text-orange mb-2">
-                Healt Insurance for people
+                Health Insurance for people
               </h1>
               <p class="lead fw-normal text-black-50 mb-4">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
