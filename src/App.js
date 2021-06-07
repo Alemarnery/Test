@@ -1,10 +1,12 @@
-import logo from "./logo.svg";
 import "./App.css";
+import Navbar from "./Components/Navbar";
+import Header from "./Components/Header";
 
 function App() {
   return (
     <div className="App">
-      <h1>HealthMax</h1>
+      <Navbar />
+      <Header />
     </div>
   );
 }
