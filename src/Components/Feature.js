@@ -1,5 +1,50 @@
 import React from "react";
 
+import Benefit from "./Benefit";
+
+const BENEFITS_FROM_SERVER = [
+  {
+    title: "Benefit #1",
+    iconName: "bi-collection",
+    description: `
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
+    obcaecati consectetur molestias quibusdam voluptate. Nesciunt id
+    modi itaque nam dolorem voluptates dolore quam sapiente.
+    Suscipit quia praesentium harum assumenda illum?
+    `,
+  },
+  {
+    title: "Benefit #2",
+    iconName: "bi-building",
+    description: `
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
+    obcaecati consectetur molestias quibusdam voluptate. Nesciunt id
+    modi itaque nam dolorem voluptates dolore quam sapiente.
+    Suscipit quia praesentium harum assumenda illum?
+    `,
+  },
+  {
+    title: "Benefit #3",
+    iconName: "bi-calendar-day",
+    description: `
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
+    obcaecati consectetur molestias quibusdam voluptate. Nesciunt id
+    modi itaque nam dolorem voluptates dolore quam sapiente.
+    Suscipit quia praesentium harum assumenda illum?
+    `,
+  },
+  {
+    title: "Benefit #4",
+    iconName: "bi-toggles2",
+    description: `
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
+    obcaecati consectetur molestias quibusdam voluptate. Nesciunt id
+    modi itaque nam dolorem voluptates dolore quam sapiente.
+    Suscipit quia praesentium harum assumenda illum?
+    `,
+  },
+];
+
 const Feature = () => {
   return (
     <section className="py-5" id="features">
@@ -10,54 +55,26 @@ const Feature = () => {
           </div>
           <div className="col-lg-8">
             <div className="row gx-5 row-cols-1 row-cols-md-2">
-              <div className="col mb-5 h-100">
-                <div className="feature bg-primary bg-gradient text-white rounded-3 mb-3">
-                  <i className="bi bi-file-person-fill"></i>
-                </div>
-                <h2 className="h5">Title</h2>
-                <p className="mb-0">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
-                  obcaecati consectetur molestias quibusdam voluptate. Nesciunt
-                  id modi itaque nam dolorem voluptates dolore quam sapiente.
-                  Suscipit quia praesentium harum assumenda illum?
-                </p>
-              </div>
-              <div className="col mb-5 h-100">
-                <div className="feature bg-primary bg-gradient text-white rounded-3 mb-3">
-                  <i className="bi bi-building"></i>
-                </div>
-                <h2 className="h5">Title</h2>
-                <p className="mb-0">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
-                  obcaecati consectetur molestias quibusdam voluptate. Nesciunt
-                  id modi itaque nam dolorem voluptates dolore quam sapiente.
-                  Suscipit quia praesentium harum assumenda illum?
-                </p>
-              </div>
-              <div className="col mb-5 mb-md-0 h-100">
-                <div className="feature bg-primary bg-gradient text-white rounded-3 mb-3">
-                  <i className="bi bi-calendar-day"></i>
-                </div>
-                <h2 className="h5">Title</h2>
-                <p className="mb-0">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
-                  obcaecati consectetur molestias quibusdam voluptate. Nesciunt
-                  id modi itaque nam dolorem voluptates dolore quam sapiente.
-                  Suscipit quia praesentium harum assumenda illum?
-                </p>
-              </div>
-              <div className="col h-100">
-                <div className="feature bg-primary bg-gradient text-white rounded-3 mb-3">
-                  <i className="bi bi-toggles2"></i>
-                </div>
-                <h2 className="h5">Title</h2>
-                <p className="mb-0">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
-                  obcaecati consectetur molestias quibusdam voluptate. Nesciunt
-                  id modi itaque nam dolorem voluptates dolore quam sapiente.
-                  Suscipit quia praesentium harum assumenda illum?
-                </p>
-              </div>
+              {BENEFITS_FROM_SERVER.map(
+                ({ title, description, iconName }, i) => {
+                  let className = "";
+
+                  if (i < BENEFITS_FROM_SERVER.length - 1) {
+                    className = "mb-5";
+                  }
+
+                  return (
+                    <Benefit
+                      key={i}
+                      title={title}
+                      iconName={iconName}
+                      className={className}
+                    >
+                      {description}
+                    </Benefit>
+                  );
+                }
+              )}
             </div>
           </div>
         </div>

@@ -1,6 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Navbar = () => {
+  const [collapsed, setCollapsed] = useState(true);
+
+  const toggleNav = () => {
+    setCollapsed(!collapsed);
+  };
+
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container px-5">
@@ -10,18 +16,19 @@ const Navbar = () => {
         <button
           className="navbar-toggler"
           type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
+          onClick={toggleNav}
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+        <div
+          className={(collapsed ? "" : "show") + " collapse navbar-collapse"}
+          id="navbarSupportedContent"
+        >
           <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <a className="nav-link" href="#home">
                 Home
               </a>
             </li>
@@ -41,12 +48,12 @@ const Navbar = () => {
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <a className="nav-link" href="#plans">
                 Plans
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <a className="nav-link" href="#faq">
                 FAQ
               </a>
             </li>
